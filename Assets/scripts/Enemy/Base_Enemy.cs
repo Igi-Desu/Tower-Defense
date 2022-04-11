@@ -1,39 +1,37 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 public class Base_Enemy : MonoBehaviour
 {
     protected int basehp;
     protected int hp;
-    [SerializeField]GameObject Hp_Bar_Prefab;
-    GameObject Hp_Bar;
+    [SerializeField]GameObject hpBarPrefab;
+    GameObject HpBar;
     [SerializeField]GameObject deathAnimation;
-    [SerializeField] GameManager gamemanagerr;
+    [SerializeField] GameManager gameManager;
     public void Start()
     {
-        gamemanagerr = GameObject.Find("GameManager").GetComponent<GameManager>();
-        Hp_Bar = Instantiate(Hp_Bar_Prefab, new Vector3(transform.position.x-0.5f,transform.position.y+0.75f,transform.position.z),transform.rotation);
-        //Hp_Bar.transform.position = new Vector3(-0.5f, 0.75f, 0);
-        Hp_Bar.transform.parent = gameObject.transform;
+        //get components and create hp bar
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        HpBar = Instantiate(hpBarPrefab, new Vector3(transform.position.x-0.5f,transform.position.y+0.75f,transform.position.z),transform.rotation);
+        HpBar.transform.parent = gameObject.transform;
     }
+
     protected void Take_Dmg(int dmg)
     {
+        //update hp bar when enemy take dmg
         hp -= dmg;
         Update_Hp_Bar();
         if (hp <= 0)
         {
-            Destroy(Hp_Bar);
             Destroy(gameObject);
         }
     }
     void Update_Hp_Bar()
     {
-
-        Hp_Bar.transform.localScale = new Vector3((float)hp / basehp, Hp_Bar.transform.lossyScale.y, 1);
+        HpBar.transform.localScale = new Vector3((float)hp / basehp, HpBar.transform.lossyScale.y, 1);
     }
     private void OnDestroy()
     {
-        gamemanagerr.increasekillcount();
+        gameManager.increasekillcount();
         Vector3 loc = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, -10);
         Instantiate(deathAnimation,loc,deathAnimation.transform.rotation);
     }
@@ -41,6 +39,7 @@ public class Base_Enemy : MonoBehaviour
     {
         if (collision.transform.tag == "Projectile")
         {
+            //get dmg of the projectile and lower hp by it's amount
             Take_Dmg(collision.transform.GetComponent<BaseProjectile>().dmg);
             BaseProjectile b = collision.transform.GetComponent<BaseProjectile>();
             b.oncol();

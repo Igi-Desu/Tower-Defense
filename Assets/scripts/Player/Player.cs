@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Playables;
@@ -58,6 +56,7 @@ public class Player : MonoBehaviour
             }
             return;
         }
+        //check for inputs
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             currentspell++;
@@ -77,6 +76,7 @@ public class Player : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.Q))
         {
+            //load bow and change bar color depending on load level
             bowload += Time.deltaTime*bowspeed;
             bowload = (bowload > maxbowload) ? maxbowload : bowload;
             bowLoadBar.transform.localScale = new Vector2(bowload / maxbowload, bowLoadBar.transform.lossyScale.y);
@@ -94,9 +94,6 @@ public class Player : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.E) && magiccd < 0&&mp>= spells[currentspell].GetComponent<spell>().mspell.manacost)
         {
-            magiccd = magiccdbase;
-            mp -= spells[currentspell].GetComponent<spell>().mspell.manacost;
-            MpBar.ResizeBar(mp);
             shotmagic();
         }
         else
@@ -153,6 +150,9 @@ public class Player : MonoBehaviour
     }
     void shotmagic()
     {
+        magiccd = magiccdbase;
+        mp -= spells[currentspell].GetComponent<spell>().mspell.manacost;
+        MpBar.ResizeBar(mp);
         Instantiate(spells[currentspell], new Vector3(get_closest_pixel(transform.position.x), get_closest_pixel(transform.position.y)), transform.rotation);
     }
 }

@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{80B56AED-56F8-DF51-A391-3439781BBF77}</ProjectGuid>
+    <ProjectGuid>{9B282EBB-F650-CE4C-3165-30EC9E911FE9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -56,30 +56,30 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\SuicideEnemy.cs" />
-    <Compile Include="Assets\UiText.cs" />
+    <Compile Include="Assets\scripts\Enemy\SuicideEnemy.cs" />
+    <Compile Include="Assets\scripts\Other\UiText.cs" />
     <Compile Include="Assets\scripts\Enemy\Enemy1.cs" />
-    <Compile Include="Assets\spell.cs" />
-    <Compile Include="Assets\GameManager.cs" />
-    <Compile Include="Assets\CastleHP.cs" />
+    <Compile Include="Assets\scripts\Projectiles\spell.cs" />
+    <Compile Include="Assets\scripts\GameManager.cs" />
+    <Compile Include="Assets\scripts\Other\CastleHP.cs" />
     <Compile Include="Assets\scripts\grassyland\cloudgenerator.cs" />
-    <Compile Include="Assets\enemyspawnerlv1.cs" />
-    <Compile Include="Assets\DeathAnimation.cs" />
-    <Compile Include="Assets\FlyingSkullAI.cs" />
+    <Compile Include="Assets\scripts\Enemy\enemyspawnerlv1.cs" />
+    <Compile Include="Assets\scripts\Other\DeathAnimation.cs" />
+    <Compile Include="Assets\scripts\Enemy\FlyingSkullAI.cs" />
     <Compile Include="Assets\scripts\Enemy\Base_Enemy.cs" />
-    <Compile Include="Assets\ManaBar.cs" />
-    <Compile Include="Assets\magicprojectileice.cs" />
-    <Compile Include="Assets\mpspell.cs" />
-    <Compile Include="Assets\enemyprojectile.cs" />
-    <Compile Include="Assets\firespell.cs" />
+    <Compile Include="Assets\scripts\Player\ManaBar.cs" />
+    <Compile Include="Assets\scripts\Projectiles\magicprojectileice.cs" />
+    <Compile Include="Assets\scripts\Projectiles\mpspell.cs" />
+    <Compile Include="Assets\scripts\Projectiles\enemyprojectile.cs" />
+    <Compile Include="Assets\scripts\Projectiles\firespell.cs" />
     <Compile Include="Assets\scripts\Player\Player.cs" />
     <Compile Include="Assets\scripts\platform\platform.cs" />
-    <Compile Include="Assets\BaseProjectile.cs" />
+    <Compile Include="Assets\scripts\Other\arrowgiver.cs" />
+    <Compile Include="Assets\scripts\Projectiles\BaseProjectile.cs" />
     <Compile Include="Assets\scripts\Player\BetterJump.cs" />
     <Compile Include="Assets\scripts\grassyland\cloud.cs" />
-    <Compile Include="Assets\Arrow.cs" />
-    <Compile Include="Assets\smolice.cs" />
-    <Compile Include="Assets\arrowgiver.cs" />
+    <Compile Include="Assets\scripts\Projectiles\Arrow.cs" />
+    <Compile Include="Assets\scripts\Projectiles\smolice.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

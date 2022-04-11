@@ -97,8 +97,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec1defbd9d058394f91808d9034d13a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Hp_Bar_Prefab: {fileID: 6393582719073787491, guid: dc974c8a2ad717546a8b64a726cf0c90, type: 3}
+  hpBarPrefab: {fileID: 6393582719073787491, guid: dc974c8a2ad717546a8b64a726cf0c90, type: 3}
   deathAnimation: {fileID: 7753133784980892493, guid: c6e8054dd282f7443b550f3177eeeb51, type: 3}
+  gameManager: {fileID: 0}
   dmg: 0
 --- !u!61 &6228741612206397482
 BoxCollider2D:

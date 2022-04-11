@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BetterJump : MonoBehaviour
@@ -11,7 +9,7 @@ public class BetterJump : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
     }
-    // Update is called once per frame
+   
     void Update()
     {
         if (rb.velocity.y < 0)
