@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9af691e7af2665846a5d78b964680362, type: 3}
   m_Name: Icespell
   m_EditorClassIdentifier: 
-  manacost: 1
+  manacost: 15
   dmg: 8
   speed: 8
